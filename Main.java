@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Main {
@@ -103,10 +104,28 @@ public class Main {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void readInputByScanner() {
+		try {
+			Scanner sc = new Scanner(System.in);
+			while (sc.hasNext()) {
+				int numberOfInput = sc.nextInt();
+                if (numberOfInput == 0) break;
+				double[] numbers = new double[numberOfInput];
+				for (int i = 0; i < numberOfInput; i++) {
+					numbers[i] = sc.nextDouble();
+				}
+				Main z = new Main(numbers);
+				z.execute();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	
 	public static void main(String[] args) {
-		Main.readInput();
+		Main.readInputByScanner();
 	}
 
 
